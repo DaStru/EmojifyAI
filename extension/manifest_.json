@@ -1,0 +1,38 @@
+{
+    "name": "EmojifyAI",
+    "description": "Transform text into emojis with EmojifyAI! Translate, replace, or enhance text offline using buit-in AI.",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "minimum_chrome_version": "128",
+    "icons": {
+        "128": "assets/icons/icon128.png",
+        "48": "assets/icons/icon48.png",
+        "16": "assets/icons/icon16.png"
+    },
+    "permissions": [
+        "aiLanguageModelOriginTrial", 
+        "contextMenus", 
+        "scripting", 
+        "notifications",
+        "activeTab",
+        "offscreen",
+        "clipboardWrite"
+    ],
+    "action": {
+        "default_icon": {
+            "16": "assets/icons/icon16.png",
+            "48": "assets/icons/icon48.png"
+        },
+        "default_title": "🔤 Translate Selection"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "trial_tokens": ["<your_token>"],
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/prompts/*", "assets/emojiRegex.txt" ],
+            "matches": [ "<all_urls>" ]
+        }
+    ]
+}

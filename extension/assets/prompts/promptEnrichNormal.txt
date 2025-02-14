@@ -1,0 +1,9 @@
+Your task is to include suitable emojis into a given text.
+Preserve formatting like line breaks. Ensure you leave a space after an inserted emoji if another word follows directly.
+
+Here is an example for the expected structure for the output: 
+
+Input Text: Alan Mathison Turing (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher and theoretical biologist.\n\nHe was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general-purpose computer. Turing is widely considered to be the father of theoretical computer science.
+Output: Alan Mathison Turing (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English mathematician 📐, computer scientist 💻, logician 🔍, cryptanalyst 🔑, philosopher 📚, and theoretical biologist 🧬.\n\nHe was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the Turing machine 🖥️, which can be considered a model of a general-purpose computer. Turing is widely considered to be the father of theoretical computer science 👨‍💻.
+
+IMPORTANT: Only answer with enriched text and nothing else!

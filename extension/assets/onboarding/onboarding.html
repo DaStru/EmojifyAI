@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="onboarding.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <link href='fonts.css' rel='stylesheet' type="text/css">
+    <title>EmojifyAI Onboarding</title>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: light-dark(rgb(8, 25, 52), white);
+            margin: 0 auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        header {
+            padding: 15px;
+            text-align: center;
+        }
+
+        section {
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        button {
+            background-color: whitesmoke;
+            color: rgb(8, 25, 52);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        ol {
+            font-size: 20px;
+            margin: 10px;
+            max-width: 80%;
+            display: inline-block;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .tg {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        .tg td, .tg th {
+            border: 1px solid light-dark(rgb(8, 25, 52), white);
+            font-size: 20px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+            text-align: center;
+        }
+
+        .tg th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../icons/icon128.png" alt="Components Settings Screenshot">
+        <h1>🎉 Welcome to EmojifyAI! 🎉</h1>
+        <p>Thank you for installing EmojifyAI, your ultimate tool to a more expressive and fun way of communicating!</p>
+        <p>Note: This extension uses experimental Google Chrome features, which may change over time and break this extension.</p>
+        <p>Follow this quick guide to set everything up!</p>
+    </header>
+
+    <section>
+        <h2>📋 1. System Requirements</h2>
+        <p>Before diving in, ensure your system meets the following requirements:</p>
+        <table class="tg">
+            <thead>
+                <tr>
+                    <th class="tg-7btt">Aspect</th>
+                    <th class="tg-amwm">Windows</th>
+                    <th class="tg-amwm">MacOS</th>
+                    <th class="tg-amwm">Linux</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-baqh">OS Version</td>
+                    <td class="tg-baqh">10, 11</td>
+                    <td class="tg-baqh">&ge; 13</td>
+                    <td class="tg-baqh">-</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Storage</td>
+                    <td class="tg-baqh" colspan="3">At least 22 GB free on the volume containing your Chrome profile.</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">GPU</td>
+                    <td class="tg-baqh" colspan="3">Integrated or discrete GPU (e.g., video card).</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Video RAM</td>
+                    <td class="tg-baqh" colspan="3">Minimum 6 GB.</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">Network</td>
+                    <td class="tg-baqh" colspan="3">A non-metered internet connection.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>⚙️ 2. Enable Local Flags</h2>
+        <p>To unlock EmojifyAI's full potential, enable the necessary experimental flags:</p>
+        <ol>
+            <li>Open a new tab and navigate to: <a href="chrome://flags" target="_blank"
+                    rel="noopener noreferrer">chrome://flags</a></li>
+            <li>Search for and enable the flags shown in the screenshot below to activate Gemini Nano. <i>(Hint: Activate the Prompt API for Gemini Nano first to unlock the other flags.)</i></li>
+        </ol>
+        <img src="flags_settings.jpg" alt="Flags Settings Screenshot">
+        <p><strong>Restart Chrome</strong> to apply the changes.</p>
+    </section>
+
+    <section>
+        <h2>⬇️ 3. Trigger Gemini Nano Download</h2>
+        <p>Click the button below to trigger the download of Gemini Nano:</p>
+        <button id="downloadButton">Trigger Download!</button>
+    </section>
+
+    <!-- Flag Section -->
+    <section id="flagSection" style="display: none;">
+        <p>Please make sure to set the flags before trying to download.</p>
+    </section>
+
+    <!-- Downloading Section -->
+    <section id="downloadingSection" style="display: none;">
+        <p id="downloadingText">Downloading Gemini Nano: 0 of 0 bytes completed.</p>
+        <p>Please wait until the download is finished.</p>
+        <p><i>(Hint: The download is only required once.)</i></p>
+    </section>
+
+    <!-- Downlaod Success Section -->
+    <section id="downloadSuccessSection" style="display: none;">
+        <h2>🎊 Congratulations!</h2>
+        <p>Download was successfull, please continue with the next steps.</p>
+    </section>
+
+    <!-- Downlaod Failure Section -->
+    <section id="downloadFailureSection" style="display: none;">
+        <h2>😯 Something seems off!</h2>
+        <p>Please make sure you completed the above steps correctly.</p>
+    </section>
+
+    <section>
+        <h2>🚧 4. Check Components Availability</h2>
+        <p>To ensure everything is ready, complete these steps once the download has finished:</p>
+        <ol>
+            <li>Open a new tab and go to:
+                <a href="chrome://components" target="_blank" rel="noopener noreferrer">
+                    chrome://components
+                </a>
+            </li>
+            <li>Ensure that the component "<b>Optimization Guide On Device Model</b>" has a version &ge;
+                2024.5.21.1031 <br>
+                <img src="components_version.jpg" alt="Components Settings Screenshot">
+            </li>
+            <li>If there is no version listed, click on <i>Check for update</i> to force the download.</li>
+    </section>
+
+    <section>
+        <h2>🔍 5. Check Gemini Nano Availability</h2>
+        <p>Click the button below to verify if Gemini Nano is available on your device:</p>
+        <button id="availabilityButton">Check Availability!</button>
+    </section>
+
+    <!-- Success Section -->
+    <section id="successSection" style="display: none;">
+        <h2>🎊 Congratulations!</h2>
+        <p>You’re all set to use EmojifyAI! Start transforming your texts into emoji-filled masterpieces!</p>
+    </section>
+
+    <!-- Downlaod Failure Section -->
+    <section id="failureSection" style="display: none;">
+        <h2>😯 Something seems off!</h2>
+        <p>Try to wait some time, reload this page and try again. Otherwise it seems like your device is not ready to run Gemini Nano.</p>
+    </section>
+
+    <footer>
+        Made with ♥️ by <a href="https://github.com/DaStru" target="_blank" rel="noopener noreferrer">David Strunje</a>
+    </footer>
+</body>
+
+</html>

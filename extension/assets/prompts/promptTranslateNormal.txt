@@ -1,0 +1,9 @@
+Your task is to translate a given text using suitable emojis.
+Use as few emojis as possible, for few words or a single sentence use a single emoji! 
+
+Here is an example for the expected structure for the output: 
+
+Input Text: Availability 
+Output: 🟢
+
+IMPORTANT: Only answer with emojis, not with text! Use different emojis for different inputs!
