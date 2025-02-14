@@ -1,5 +1,8 @@
 ![Banner](assets/marquee.jpg)
 # EmojifyAI 🪄
+
+https://github.com/user-attachments/assets/d0b566cd-4b6a-4213-bbd1-27a4e974e6ff
+
 Bring your text to life with EmojifyAI, the ultimate Google Chrome™ extension for emoji lovers.
 
 Powered by the on-device Gemini™ Nano Model, EmojifyAI translates your text into emojis seamlessly and securely—no internet required, and no data ever leaves your device.
