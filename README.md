@@ -23,7 +23,7 @@ EmojifyAI leverages experimental Google Chrome™ features currently under activ
 
 ## How to install ⬇️
 ### Install from Chrome Web Store 🛍️
-[![Chrome Webstore Badge](assets/ChromeWebStoreBadge.png)](https://chromewebstore.google.com/)
+[![Chrome Webstore Badge](assets/ChromeWebStoreBadge.png)](https://chromewebstore.google.com/detail/emojifyai/ahnkipgelbdmadiibdmmhbbheellpopj)
 
 ### Manual Installation 🔧
 1. Clone this repository
